@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://njh3rridpue3"]
+
+[ext_resource type="Script" path="res://addons/proc_wall_graph/proc_wall_graph.gd" id="1_q3gv0"]
+[ext_resource type="Script" path="res://addons/proc_wall_graph/proc_wall_node.gd" id="2_p1b7j"]
+
+[node name="ProcWallGraph" type="Node2D" node_paths=PackedStringArray("root_node")]
+script = ExtResource("1_q3gv0")
+root_node = NodePath("ProcwallNodeROOT")
+root_sweep_start_angle = 3.14
+angular_resolution = 15.0
+linear_resolution = 30.0
+use_higher_resolution = true
+redraw = true
+redraw_frequency = 5
+set_collision_polygon_on_draw = true
+
+[node name="ProcwallNodeROOT" type="Node2D" parent="." node_paths=PackedStringArray("connections")]
+position = Vector2(-403, -50)
+script = ExtResource("2_p1b7j")
+joint_radius = 60.0
+connections = [NodePath("../ProcwallNode1"), NodePath("../ProcwallNode5")]
+
+[node name="ProcwallNode1" type="Node2D" parent="." node_paths=PackedStringArray("connections")]
+position = Vector2(38, -51)
+script = ExtResource("2_p1b7j")
+joint_radius = 72.755
+inner_curve_radius_override = 120.0
+connections = [NodePath("../ProcwallNodeROOT"), NodePath("../ProcwallNode2"), NodePath("../ProcwallNode3")]
+
+[node name="ProcwallNode2" type="Node2D" parent="." node_paths=PackedStringArray("connections")]
+position = Vector2(500, 47)
+script = ExtResource("2_p1b7j")
+joint_radius = 33.455
+inner_curve_radius_override = 200.0
+connections = [NodePath("../ProcwallNode1"), NodePath("../ProcwallNode4"), NodePath("../ProcwallNode5")]
+
+[node name="ProcwallNode3" type="Node2D" parent="." node_paths=PackedStringArray("connections")]
+position = Vector2(-5, -426)
+script = ExtResource("2_p1b7j")
+joint_radius = 60.0
+connections = [NodePath("../ProcwallNode1")]
+
+[node name="ProcwallNode4" type="Node2D" parent="." node_paths=PackedStringArray("connections")]
+position = Vector2(724, -126)
+script = ExtResource("2_p1b7j")
+joint_radius = 30.0
+connections = [NodePath("../ProcwallNode2"), NodePath("../ProcwallNode6")]
+
+[node name="ProcwallNode5" type="Node2D" parent="." node_paths=PackedStringArray("connections")]
+position = Vector2(-62, 346)
+script = ExtResource("2_p1b7j")
+joint_radius = 120.0
+connections = [NodePath("../ProcwallNodeROOT"), NodePath("../ProcwallNode2")]
+
+[node name="ProcwallNode6" type="Node2D" parent="." node_paths=PackedStringArray("connections")]
+position = Vector2(1371, -128)
+script = ExtResource("2_p1b7j")
+joint_radius = 30.0
+inner_curve_radius_override = 250.0
+connections = [NodePath("../ProcwallNode4"), NodePath("../ProcwallNode7")]
+
+[node name="ProcwallNode7" type="Node2D" parent="." node_paths=PackedStringArray("connections")]
+position = Vector2(1371, -826)
+script = ExtResource("2_p1b7j")
+joint_radius = 30.0
+inner_curve_radius_override = 250.0
+connections = [NodePath("../ProcwallNode6"), NodePath("../ProcwallNode8")]
+
+[node name="ProcwallNode8" type="Node2D" parent="." node_paths=PackedStringArray("connections")]
+position = Vector2(964, -827)
+script = ExtResource("2_p1b7j")
+joint_radius = 30.0
+connections = [NodePath("../ProcwallNode7")]
