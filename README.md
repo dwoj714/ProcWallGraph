@@ -28,3 +28,5 @@ ProcWallNode's properties:
 - Connections: The list of ProcWallNodes that this node is connected to. For best results, both connected nodes should mutually contain each other in their lists, but there are cases where only one node having the connection will work.
 - Editor Add Connection: Click this in editor, like a button, to automatically create a node connected to this one, added to each others' connections array. Note that the 'Undo' function does not work properly to remove the created node. Use with caution.
 - Redraw: If true, draw a circle representing this node's joint_radius, and tangent lines to other connected nodes.
+
+ProcWallExample.tcsn is included as an example of a proper setup that you can play around with
