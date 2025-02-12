@@ -17,7 +17,7 @@ ProcWallGraph's properties:
 - Root Sweep Start Angle: Used to determine which of the Root Node's connections should be used first when generating the polygon. Based on the node's relative angle from the root node in 2D space.
 - Angular Resolution: When generating curves around nodes, have 1 vertex every n-th degree. Smaller resolution = more vertices in the curve.
 - Linear Resolution: When generating curves around nodes, the vertex count is determined by the physical distance between vertices rather than the angle around the curve. Useful for smoothing out curves around joints with large radii
-- Use Higher Resolution: If true, arcs will be generated using whichever resolution (liner or angular) would generate more vertices.
+- Use Higher Resolution: If true, arcs will be generated using whichever resolution (linear or angular) would generate more vertices.
 - Redraw: Should the editor actively redraw the ProcWallGraph.
 - Redraw Frequency: How often (how many editor ticks) should the ProcWallGraph be redrawn.
 - Set Collision Polygon on Draw: In addition to drawing the graph, also generate the collision polygon in editor.
